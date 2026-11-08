@@ -1,0 +1,117 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>JAY 36 - Gold Gamma Live</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;background:#090d16;color:#edf2fa;font-family:Arial,sans-serif}
+header{padding:20px;background:#111827;border-bottom:1px solid #29354a}
+h1{margin:0;color:#e8bd59;font-size:25px}
+.sub{color:#94a3b8;font-size:12px;margin-top:7px}
+main{padding:15px;max-width:1100px;margin:auto}
+.status{padding:13px;background:#292313;border:1px solid #77602c;border-radius:9px;color:#f5ce70;margin-bottom:15px;font-size:13px}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.card{background:#141e2e;border:1px solid #293750;padding:15px;border-radius:10px;margin-bottom:13px}
+.label{color:#9eacc0;font-size:12px}
+.value{font-size:22px;font-weight:bold;margin-top:9px;color:#e9c46a}
+h2{font-size:16px;margin:5px 0 15px}
+.chart{width:100%;height:auto;display:block}
+.chartbox{background:#101a29;border-radius:8px;padding:10px}
+.note{font-size:11px;color:#9eacc0;margin-top:10px}
+.bar{height:12px;background:#263449;border-radius:8px;overflow:hidden;margin-top:8px}
+.fill{height:100%;background:#d5a943;width:50%}
+.exp{padding:12px 0;border-bottom:1px solid #293750}
+.exp:last-child{border:0}
+footer{text-align:center;color:#718096;font-size:11px;padding:25px}
+@media(max-width:550px){.grid{grid-template-columns:1fr 1fr}.value{font-size:18px}}
+</style>
+</head>
+<body>
+<header>
+<h1>JAY 36</h1>
+<div class="sub">GOLD FUTURES · GC · GAMMA EXPOSURE DASHBOARD</div>
+</header>
+<main>
+<div class="status">
+● CME LIVE FEED NOT CONNECTED<br>
+This dashboard is awaiting the secure market-data bridge.
+</div>
+
+<div class="grid">
+<div class="card">
+<div class="label">TOTAL GAMMA</div>
+<div class="value" id="total">--</div>
+</div>
+<div class="card">
+<div class="label">GAMMA FLIP</div>
+<div class="value" id="flip">--</div>
+</div>
+<div class="card">
+<div class="label">SPOT PRICE · GC</div>
+<div class="value" id="spot">--</div>
+</div>
+<div class="card">
+<div class="label">CALL WALL</div>
+<div class="value" id="call">--</div>
+</div>
+<div class="card">
+<div class="label">PUT WALL</div>
+<div class="value" id="put">--</div>
+</div>
+<div class="card">
+<div class="label">DATA STATUS</div>
+<div class="value" style="font-size:15px;color:#e9a45c">WAITING</div>
+</div>
+</div>
+
+<div class="card">
+<h2>Total Gamma Exposure by Strike</h2>
+<div class="chartbox">
+<svg class="chart" viewBox="0 0 600 260">
+<g stroke="#293750" stroke-width="1">
+<path d="M45 30H580 M45 80H580 M45 130H580 M45 180H580 M45 220H580"/>
+</g>
+<path d="M45 130H580" stroke="#8393a8" stroke-dasharray="5 5"/>
+<text x="5" y="35" fill="#94a3b8" font-size="11">+</text>
+<text x="5" y="225" fill="#94a3b8" font-size="11">-</text>
+<text x="48" y="245" fill="#94a3b8" font-size="11">LOWER STRIKES</text>
+<text x="450" y="245" fill="#94a3b8" font-size="11">HIGHER STRIKES</text>
+<text x="48" y="18" fill="#e9c46a" font-size="12">GC GAMMA PROFILE</text>
+<text x="180" y="120" fill="#94a3b8" font-size="13">AWAITING LIVE DATA</text>
+</svg>
+</div>
+<div class="note">Chart will populate when the GC options data feed is connected.</div>
+</div>
+
+<div class="card">
+<h2>Expiration Breakdown</h2>
+<div class="exp">
+<strong>Nearest Expiration</strong>
+<div class="label">Gamma exposure: Awaiting data</div>
+<div class="bar"><div class="fill" style="width:0%"></div></div>
+</div>
+<div class="exp">
+<strong>Next Expiration</strong>
+<div class="label">Gamma exposure: Awaiting data</div>
+<div class="bar"><div class="fill" style="width:0%"></div></div>
+</div>
+<div class="exp">
+<strong>Monthly Expiration</strong>
+<div class="label">Gamma exposure: Awaiting data</div>
+<div class="bar"><div class="fill" style="width:0%"></div></div>
+</div>
+<div class="exp">
+<strong>Total Expirations</strong>
+<div class="label">Awaiting options chain</div>
+</div>
+</div>
+<footer>
+JAY 36 · GOLD FUTURES GAMMA ANALYTICS<br>
+Market data must be connected before displaying live exposure.
+</footer>
+</main>
+</body>
+</html>
